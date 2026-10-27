@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Football Match Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⚽ Football Match Manager</h1>
+  <div id="seasonInfo" class="sub"></div>
+</header>
+
+<nav id="tabs">
+  <button data-tab="squad" class="active">Squad</button>
+  <button data-tab="match">Match</button>
+  <button data-tab="table">Table</button>
+  <button data-tab="fixtures">Fixtures</button>
+</nav>
+
+<main>
+  <section id="tab-squad">
+    <div class="card">
+      <label>Club name
+        <input id="clubName" maxlength="20">
+      </label>
+      <label>Formation
+        <select id="formation"></select>
+      </label>
+      <div class="row">
+        <button id="autoPick">Auto pick XI</button>
+        <span id="xiStatus" class="badge"></span>
+      </div>
+      <div id="strengthInfo" class="sub"></div>
+    </div>
+    <p class="hint">Tap a player to move him in or out of the starting XI. You need 11 starters with exactly 1 goalkeeper.</p>
+    <div id="squadList"></div>
+  </section>
+
+  <section id="tab-match" hidden>
+    <div class="card center">
+      <div id="roundLabel" class="sub"></div>
+      <div class="scoreboard">
+        <div id="homeName" class="team">-</div>
+        <div id="score" class="score">0 - 0</div>
+        <div id="awayName" class="team">-</div>
+      </div>
+      <div id="clock" class="clock">0'</div>
+      <div class="row center-row">
+        <button id="kickoff" class="primary">Kick off</button>
+        <button id="skip" disabled>Skip to end</button>
+      </div>
+    </div>
+    <div id="log" class="log"></div>
+  </section>
+
+  <section id="tab-table" hidden>
+    <div class="card">
+      <table id="leagueTable"></table>
+    </div>
+  </section>
+
+  <section id="tab-fixtures" hidden>
+    <div id="fixtureList"></div>
+  </section>
+</main>
+
+<footer>
+  <button id="newSeason" class="danger">New season</button>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
